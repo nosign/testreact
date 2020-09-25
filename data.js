@@ -16,11 +16,13 @@ const data = [
     }
 ];
 
-let count = 0, price = 0;
-
-for (let i = 0; i < data.length; ++i) {
-    count += data[i].count;
-    price += data[i].price_for_all;
+function sumItems (array) {
+    let sum = {count: 0, price: 0};
+    for (let i = 0; i < array.length; i++) {
+        sum.count += array[i].count;
+        sum.price += array[i].price_for_all;
+    }
+    return sum;
 }
 
-console.log("{ count: " + count +", price: " + price + "}");
+console.log(sumItems(data));
